@@ -69,7 +69,7 @@ class MainWindowWidget (QWidget):
         # background
         self.icon = QLabel (self)
         self.icon.setAlignment (Qt.AlignCenter)
-        self.icon.setPixmap (QPixmap ('/Users/f/PycharmProjects/Textractor/icon.png'))
+        self.icon.setPixmap (QPixmap ('icon.png'))
 
         self.message = QLabel (self)
         self.message.setMinimumWidth (200)
@@ -134,7 +134,7 @@ class MainWindowWidget (QWidget):
 
                 # convert to grayscale and extract text with tesseract
                 gray = cv2.cvtColor (image, cv2.COLOR_BGR2GRAY)
-                text = pytesseract.image_to_string (gray, lang="deu")
+                text = pytesseract.image_to_string (gray, lang="eng")
                 text += "\n"
                 self.text_allpages.append(text)
                 #print (self.text)
